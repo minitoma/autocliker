@@ -3,10 +3,10 @@
 import sys, pyautogui, time, keyboard, argparse
 
 parser = argparse.ArgumentParser(description="Autoclicker")
-parser.add_argument('-t', nargs=1, required=True, type=int, help='time in seconds')
+parser.add_argument('-t', nargs='?', const=900, default=900, type=int, help='time in seconds (default: 900s)')
 args = parser.parse_args()
 
-t_end = time.time() + args.t[0]
+t_end = time.time() + args.t
 blu = True
 
 for i in range(3,0,-1):
